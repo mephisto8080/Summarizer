@@ -1,0 +1,34 @@
+processing:
+  chunk_size: 1800
+  chunk_overlap: 250
+  meta_section_size: 5
+  compression_max_chars: 700
+  separators:
+    - "\n\n"
+    - "\n"
+    - "."
+    - " "
+    - ""
+
+models:
+  groq:
+    model_name: "llama-3.3-70b-versatile"
+    temperature: 0
+    max_tokens_meta: 3500
+    max_tokens_global: 1800
+
+  # Future offline model configurations
+  ollama:
+    base_url: "http://localhost:11434"
+    model_name: "llama3"
+    temperature: 0
+
+  huggingface:
+    model_path: "./models/"
+    model_name: ""
+    device: "cpu"
+
+output:
+  format: "markdown"
+  include_metadata: true
+  save_intermediate: true
